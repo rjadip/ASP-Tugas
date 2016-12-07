@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VotingModelFinishingStoreContainer" CdmEntityContainer="votingEntitiesFinishing">
+    <EntitySetMapping Name="tb_admin">
+      <EntityTypeMapping TypeName="VotingModelFinishing.tb_admin">
+        <MappingFragment StoreEntitySet="tb_admin">
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+          <ScalarProperty Name="admin_name" ColumnName="admin_name" />
+          <ScalarProperty Name="admin_username" ColumnName="admin_username" />
+          <ScalarProperty Name="admin_password" ColumnName="admin_password" />
+          <ScalarProperty Name="admin_level" ColumnName="admin_level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_team">
+      <EntityTypeMapping TypeName="VotingModelFinishing.tb_team">
+        <MappingFragment StoreEntitySet="tb_team">
+          <ScalarProperty Name="team_id" ColumnName="team_id" />
+          <ScalarProperty Name="team_name" ColumnName="team_name" />
+          <ScalarProperty Name="team_group" ColumnName="team_group" />
+          <ScalarProperty Name="jumlah_pemilih" ColumnName="jumlah_pemilih" />
+          <ScalarProperty Name="total_pemilih" ColumnName="total_pemilih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_user">
+      <EntityTypeMapping TypeName="VotingModelFinishing.tb_user">
+        <MappingFragment StoreEntitySet="tb_user">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_tempat_lahir" ColumnName="user_tempat_lahir" />
+          <ScalarProperty Name="user_tanggal_lahir" ColumnName="user_tanggal_lahir" />
+          <ScalarProperty Name="id_team" ColumnName="id_team" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

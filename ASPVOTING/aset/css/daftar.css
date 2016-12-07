@@ -1,0 +1,55 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f8f8f8;
+}
+
+h1 {
+    text-align: center;
+    margin: 10% 0 1% 0;
+    color: #d95b43;
+    font-family: Verdana;
+    font-size: 22px;
+    text-transform:uppercase;
+}
+
+#main-container {
+    background: #69d2e7;
+    width: 300px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#nama, #tempatlahir, #Tanggallahir {
+    width: 93%;
+    height:40px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    border: 0px;
+    font-family: Calibri;
+    font-size: 18px;
+}
+
+
+#kirim {
+    width: 100%;
+    height:40px;
+    border:0px;
+    border-radius: 5px;
+    font-weight: bold;
+    background: #d95b43;
+    color: #f0f0f0;
+}
+
+    #kirim:hover {
+        cursor:pointer;
+    }
+
+#statusmasuk {
+    color:red;
+    font-weight:bold;
+}

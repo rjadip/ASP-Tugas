@@ -1,0 +1,33 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family:Verdana;
+}
+
+a {
+    text-decoration: none;
+    color: #c11515;
+}
+
+body {
+    background: #69d2e7;
+}
+
+#outer-wrapper {
+    width: 100%;
+    margin: 0px auto;
+    height: 472px;
+}
+
+#centering {
+    background: #d95b43;
+    width: 30%;
+    height:20px;
+    margin:20% auto;
+    padding:10px;
+    color: #f0f0f0;
+    border-radius:5px;
+    text-align:center;
+}
+
+

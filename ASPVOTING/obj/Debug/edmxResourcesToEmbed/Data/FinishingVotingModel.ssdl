@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VotingModelFinishing.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="VotingModelFinishingStoreContainer">
+    <EntitySet Name="tb_admin" EntityType="VotingModelFinishing.Store.tb_admin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_team" EntityType="VotingModelFinishing.Store.tb_team" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_user" EntityType="VotingModelFinishing.Store.tb_user" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_tb_user_tb_user" Association="VotingModelFinishing.Store.FK_tb_user_tb_user">
+      <End Role="tb_team" EntitySet="tb_team" />
+      <End Role="tb_user" EntitySet="tb_user" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tb_admin">
+    <Key>
+      <PropertyRef Name="admin_id" />
+    </Key>
+    <Property Name="admin_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="admin_name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="admin_username" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="admin_password" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="admin_level" Type="nchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tb_team">
+    <Key>
+      <PropertyRef Name="team_id" />
+    </Key>
+    <Property Name="team_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="team_name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="team_group" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="jumlah_pemilih" Type="int" Nullable="false" />
+    <Property Name="total_pemilih" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="user_name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="user_tempat_lahir" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="user_tanggal_lahir" Type="date" Nullable="false" />
+    <Property Name="id_team" Type="int" />
+  </EntityType>
+  <Association Name="FK_tb_user_tb_user">
+    <End Role="tb_team" Type="VotingModelFinishing.Store.tb_team" Multiplicity="0..1" />
+    <End Role="tb_user" Type="VotingModelFinishing.Store.tb_user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_team">
+        <PropertyRef Name="team_id" />
+      </Principal>
+      <Dependent Role="tb_user">
+        <PropertyRef Name="id_team" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

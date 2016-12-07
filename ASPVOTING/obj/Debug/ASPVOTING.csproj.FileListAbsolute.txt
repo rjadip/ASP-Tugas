@@ -1,0 +1,14 @@
+c:\users\goblog\documents\visual studio 2012\Projects\ASPVOTING\ASPVOTING\bin\ASPVOTING.dll
+c:\users\goblog\documents\visual studio 2012\Projects\ASPVOTING\ASPVOTING\bin\ASPVOTING.pdb
+c:\users\goblog\documents\visual studio 2012\Projects\ASPVOTING\ASPVOTING\obj\Debug\ASPVOTING.csprojResolveAssemblyReference.cache
+c:\users\goblog\documents\visual studio 2012\Projects\ASPVOTING\ASPVOTING\obj\Debug\ASPVOTING.dll
+c:\users\goblog\documents\visual studio 2012\Projects\ASPVOTING\ASPVOTING\obj\Debug\ASPVOTING.pdb
+C:\Users\Goblog\documents\visual studio 2012\Projects\ASPVOTING\ASPVOTING\bin\EntityFramework.dll
+C:\Users\Goblog\documents\visual studio 2012\Projects\ASPVOTING\ASPVOTING\bin\EntityFramework.xml
+D:\ASPVOTING-master\ASPVOTING\bin\ASPVOTING.dll.config
+D:\ASPVOTING-master\ASPVOTING\bin\ASPVOTING.dll
+D:\ASPVOTING-master\ASPVOTING\bin\ASPVOTING.pdb
+D:\ASPVOTING-master\ASPVOTING\bin\EntityFramework.dll
+D:\ASPVOTING-master\ASPVOTING\bin\EntityFramework.xml
+D:\ASPVOTING-master\ASPVOTING\obj\Debug\ASPVOTING.dll
+D:\ASPVOTING-master\ASPVOTING\obj\Debug\ASPVOTING.pdb

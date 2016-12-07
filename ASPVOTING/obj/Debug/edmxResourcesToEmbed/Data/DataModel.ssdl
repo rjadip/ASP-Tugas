@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="votingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="votingModelStoreContainer">
+    <EntitySet Name="table_user" EntityType="votingModel.Store.table_user" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tb_admin" EntityType="votingModel.Store.tb_admin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="team_table" EntityType="votingModel.Store.team_table" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_table_user_table_user" Association="votingModel.Store.FK_table_user_table_user">
+      <End Role="team_table" EntitySet="team_table" />
+      <End Role="table_user" EntitySet="table_user" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="table_user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="user_name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="user_tempat_lahir" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="user_tanggal_lahir" Type="date" Nullable="false" />
+    <Property Name="id_team" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_admin">
+    <Key>
+      <PropertyRef Name="admin_id" />
+    </Key>
+    <Property Name="admin_id" Type="int" Nullable="false" />
+    <Property Name="admin_name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="admin_username" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="admin_password" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="team_table">
+    <Key>
+      <PropertyRef Name="team_id" />
+    </Key>
+    <Property Name="team_id" Type="int" Nullable="false" />
+    <Property Name="team_name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="team_group" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_table_user_table_user">
+    <End Role="team_table" Type="votingModel.Store.team_table" Multiplicity="1" />
+    <End Role="table_user" Type="votingModel.Store.table_user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team_table">
+        <PropertyRef Name="team_id" />
+      </Principal>
+      <Dependent Role="table_user">
+        <PropertyRef Name="id_team" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

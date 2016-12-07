@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="votingModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="VotingModelEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="table_user" EntityType="votingModel.table_user" />
+    <EntitySet Name="tb_admin" EntityType="votingModel.tb_admin" />
+    <EntitySet Name="team_table" EntityType="votingModel.team_table" />
+    <AssociationSet Name="FK_table_user_table_user" Association="votingModel.FK_table_user_table_user">
+      <End Role="team_table" EntitySet="team_table" />
+      <End Role="table_user" EntitySet="table_user" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="table_user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="user_name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="user_tempat_lahir" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="user_tanggal_lahir" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="id_team" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="team_table" Relationship="votingModel.FK_table_user_table_user" FromRole="table_user" ToRole="team_table" />
+  </EntityType>
+  <EntityType Name="tb_admin">
+    <Key>
+      <PropertyRef Name="admin_id" />
+    </Key>
+    <Property Name="admin_id" Type="Int32" Nullable="false" />
+    <Property Name="admin_name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="admin_username" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="admin_password" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="team_table">
+    <Key>
+      <PropertyRef Name="team_id" />
+    </Key>
+    <Property Name="team_id" Type="Int32" Nullable="false" />
+    <Property Name="team_name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="team_group" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="table_user" Relationship="votingModel.FK_table_user_table_user" FromRole="team_table" ToRole="table_user" />
+  </EntityType>
+  <Association Name="FK_table_user_table_user">
+    <End Role="team_table" Type="votingModel.team_table" Multiplicity="1" />
+    <End Role="table_user" Type="votingModel.table_user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team_table">
+        <PropertyRef Name="team_id" />
+      </Principal>
+      <Dependent Role="table_user">
+        <PropertyRef Name="id_team" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,114 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family:Verdana;
+}
+
+a {
+    text-decoration: none;
+    color: #c11515;
+}
+
+body {
+    background: #f8f8f8;
+}
+
+#outer-wrapper {
+    width: 100%;
+    margin: 0px auto;
+    height: 472px;
+}
+
+#container {
+    width: 80%;
+    margin: 0px auto;
+}
+
+header {
+    text-align: center;
+    width:100%;
+    height: 60px;
+    font-family: 'Lucida Sans Typewriter';
+    border-bottom: 2px solid #f0f0f0;
+}
+
+    header h1 {
+        color: #d95b43;
+        font-size: 24px;
+        padding: 15px;
+    }
+
+
+#container-wrapper {
+    width: 80%;
+    margin: 0px auto;
+    overflow:auto;
+}
+
+
+#main-container {
+    margin-top: 10px;
+    border: 2px solid #f0f0f0;
+    background: #f6f6f6;
+    overflow:auto;
+}
+
+
+.user {
+    width: 200px;
+    height: 300px;
+    border: 1px solid #a7dbd8;
+    float:left;
+    margin: 1%;
+    padding:10px;
+    text-align:center;
+}
+
+    .user h3 {
+        padding: 0 0 10px 0;
+    }
+
+    .user img {
+        border-radius: 50%;
+        width: 95%;
+        height:65%;
+    }
+
+.votenow {
+    background: radius:;
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background: y: Cali;
+    border: none;
+    color: #f0f0f0;
+    font-size: 24px;
+    font-family: Calibri;
+}
+
+    .votenow:hover {
+        cursor: pointer;
+    }
+
+#konfirmasi {
+    padding: 10px;
+    margin: 5px auto;
+    background: #d95b43;
+    color: #232323;
+}
+
+    #konfirmasi #username {
+        color: #d95b43;
+        font-weight:bold;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+#outer-footer {
+    height: 30px;
+    padding: 20px 0 20px 0;
+    color: #666;
+}
+
+
